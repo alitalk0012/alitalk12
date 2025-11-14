@@ -480,10 +480,10 @@ async function fetchByCategory({ categoryId }) {
   const listTasks = { item: [], dataBaseRes: [] };
 
   // ---- divided[1]은 2개로 나눠서 배포
-  //  slice(0, Math.round(divided[1].length) / 2 )
+  //  slice(0, Math.round(divided[1].length))
   // slice(Math.round(divided[1].length / 2), Math.round(divided[1].length))
 
-  const categoryRes = divided[10].map((item) =>
+  const categoryRes = divided[0].map((item) =>
     limit(async () => {
       const cat = await ProductCategories.findOne({
         cId: String(item.cId),
